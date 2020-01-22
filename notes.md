@@ -1,4 +1,4 @@
-# Wed Jan 21st To Do:
+# Wed Jan 22nd To Do:
 
 * Make a Migration for a Shoe model
   - attributes: brand, color, price, condition
