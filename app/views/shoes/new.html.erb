@@ -1,0 +1,36 @@
+<h1>Create a new shoe</h1>
+<form action="/shoes" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Brand:</label>
+  <input type="text" name="shoe[brand]"><br>
+  <input type="submit" value="Create Shoe">
+</form>
+
+<br>
+<hr>
+
+
+<%= form_tag('/shoes') do  %>
+   <label>Brand:</label>
+  <%= text_field_tag :'shoe[brand]' %> <br>
+  <%= submit_tag "Create Shoe" %>
+<% end %>
+
+<br>
+<hr>
+
+<%= form_for(@shoe) do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %><br>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<hr>
+
+<%= form_with model: @shoe do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %><br>
+  <%= f.submit%>
+
+<% end %>

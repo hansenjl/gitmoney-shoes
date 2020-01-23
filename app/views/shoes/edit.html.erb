@@ -1,0 +1,16 @@
+<h1>You are editing <%= @shoe.brand_and_color %></h1>
+<%= form_for(@shoe) do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %><br>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<hr>
+
+<%= form_with model: @shoe do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %><br>
+  <%= f.submit%>
+
+<% end %>
