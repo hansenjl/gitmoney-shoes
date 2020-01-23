@@ -12,3 +12,45 @@
 * Add links to a layout page
 * Add a custom route that shows the most expensive shoe
 * Create a form for making new shoes using form_tag
+
+
+# Thurs Jen 23:
+```
+<h1>Create a New Shoe here:</h1>
+
+<form action="/shoes" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Brand:</label>
+  <input type="text" name="shoes[brand]">
+
+  <input type="submit" value="Create Shoe">
+</form>
+
+<br>
+<hr>
+# Searches, forms not related to a model (:url)
+<%= form_tag("/shoes") do %>
+  <%= label_tag(:brand) %>
+  <%= text_field_tag :'shoes[brand]' %>
+  <%= submit_tag "Create Shoe" %>
+<% end %>
+
+<br>
+<hr>
+# creating or updating of models
+<%= form_for(@shoe) do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<hr>
+
+<%= form_with(model: @shoe, class: 'new_shoe') do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <%= f.submit %>
+<% end %>
+
+```
