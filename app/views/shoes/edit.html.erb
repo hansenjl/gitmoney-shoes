@@ -1,0 +1,17 @@
+<h1>Edit your Shoe! </h1>
+
+<%= form_with(model: @shoe) do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <br>
+  <%= f.label :condition %>
+  <%= f.text_field :condition %>
+  <br>
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+  <br>
+   <%= f.label :price %>
+  <%= f.number_field :price %>
+  <br>
+  <%= f.submit %>
+<% end %>
