@@ -14,7 +14,7 @@
 * Create a form for making new shoes using form_tag
 
 
-# Thurs Jen 23:
+# Thurs Jan 23:
 ```
 <h1>Create a New Shoe here:</h1>
 
