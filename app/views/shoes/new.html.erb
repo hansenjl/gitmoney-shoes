@@ -14,6 +14,17 @@
    <%= f.label :price %>
   <%= f.number_field :price %>
   <br>
+  <%= f.label :category_id %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true  %>
+  <br>
+
+  <h3>Or Create a New Category</h3>
+  <%= f.fields_for :category do |cat_field| %>
+    <%= cat_field.label :name %>
+    <%= cat_field.text_field :name %>
+    <br>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/shoes/most_expensive', to: 'shoes#expensive', as: 'expensive'
 
