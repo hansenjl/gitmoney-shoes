@@ -1,9 +1,21 @@
 class Shoe < ActiveRecord::Base
+   belongs_to :category  #built in validation for presence
+   # .category  .category= .build_category
+   #  .create_category
+
+  # accepts_nested_attributes_for :category, reject_if: proc {|attr| att['name'].blank? }
+
+  def category_attributes=(attributes)
+    if !attributes["name"].blank?
+      self.category =  Category.find_or_create_by(attributes)
+    end
+  end
+
   validates :brand, :color, :price, presence: true
   validates :price, numericality: { only_integer: true, greater_than: 10 }
   validates :color, uniqueness: {scope: :brand, message: "has already been used with that brand"}
   validates :color, two_word: true
-  validates :brand, two_word: true
+ # validates :brand, two_word: true
   #validate :color_check
 
   def brand_and_color
@@ -16,6 +28,7 @@ class Shoe < ActiveRecord::Base
   end
 
 
+
   def color_check
     #add an error if they only used 1 word for the color
 
@@ -25,5 +38,6 @@ class Shoe < ActiveRecord::Base
     end
 
   end
+
 
 end

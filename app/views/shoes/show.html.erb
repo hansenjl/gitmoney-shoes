@@ -2,6 +2,7 @@
 
 <p>Condition: <%= @shoe.condition %></p>
 <p>Price: $<%= @shoe.price%></p>
+<p>Category: <%= @shoe.category.try(:name) %></p>
 
 
 <%= link_to( "Delete" ,shoe_path(@shoe), method: 'delete') %>

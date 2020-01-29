@@ -6,10 +6,11 @@ class ShoesController < ApplicationController
 
   def new
     @shoe = Shoe.new
+    @shoe.build_category
   end
 
   def create
-    @shoe = Shoe.new(params.require(:shoe).permit(:brand, :condition, :price, :color))
+    @shoe = Shoe.new(params.require(:shoe).permit(:brand, :condition, :price, :color, :category_id, category_attributes: [:name]))
     if @shoe.save
       redirect_to shoe_path(@shoe)
     else
