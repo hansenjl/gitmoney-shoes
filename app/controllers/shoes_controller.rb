@@ -9,8 +9,13 @@ class ShoesController < ApplicationController
   end
 
   def create
-    shoe = Shoe.create(params.require(:shoe).permit(:brand, :condition, :price, :color))
-    redirect_to shoe_path(shoe)
+    @shoe = Shoe.new(params.require(:shoe).permit(:brand, :condition, :price, :color))
+    if @shoe.save
+      redirect_to shoe_path(@shoe)
+    else
+
+      render :new
+    end
   end
 
   def edit
