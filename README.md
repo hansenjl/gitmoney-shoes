@@ -1,5 +1,7 @@
 # Wed Jan 22nd To Do:
 
+## Index & Show Routes / Models / URL helpers
+
 * Make a Migration for a Shoe model
   - attributes: brand, color, price, condition
   - 001_create_shoes.rb
@@ -15,6 +17,9 @@
 
 
 # Thurs Jan 23:
+
+## CRUD
+
 ```
 <h1>Create a New Shoe here:</h1>
 
@@ -54,3 +59,17 @@
 <% end %>
 
 ```
+
+# Tues Jan 28:
+
+## Validations
+
+This [guide](https://guides.rubyonrails.org/active_record_validations.html) is all you need.
+
+# Wed Jan 29:
+
+## Associations & Nested Forms
+
+- Setting up Associations (models & migrations)
+- Basic Nested Form using [Accepts Nested Attributes](https://api.rubyonrails.org/v3.2.21/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
+- Nested Form using a custom attribute writer
