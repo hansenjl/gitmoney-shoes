@@ -71,5 +71,5 @@ This [guide](https://guides.rubyonrails.org/active_record_validations.html) is a
 ## Associations & Nested Forms
 
 - Setting up Associations (models & migrations)
-- Basic Nested Form using [Accepts Nested Attributes](https://api.rubyonrails.org/v3.2.21/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
+- Basic Nested Form using [Accepts Nested Attributes](https://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
 - Nested Form using a custom attribute writer
