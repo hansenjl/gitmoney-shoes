@@ -3,7 +3,7 @@ class Shoe < ActiveRecord::Base
    # .category  .category= .build_category
    #  .create_category
 
-  # accepts_nested_attributes_for :category, reject_if: proc {|attr| att['name'].blank? }
+  # accepts_nested_attributes_for :category, reject_if: proc {|attr| attr['name'].blank? }
 
   def category_attributes=(attributes)
     if !attributes["name"].blank?

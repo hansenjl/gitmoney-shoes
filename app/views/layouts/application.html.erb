@@ -11,8 +11,12 @@
 
   <body>
     <div>
-      <%= link_to("All Shoes", shoes_path) %>
-      <%= link_to("Most Expensive", expensive_path) %>
+      <%= link_to("All Shoes", shoes_path) %> |
+      <%= link_to("New Shoe", new_shoe_path) %> |
+      <%= link_to("Most Expensive", expensive_path) %> |
+      <%= link_to("All Categories", categories_path) %> |
+      <%= link_to("New Category", new_category_path) %>
+
     </div>
     <%= yield %>
   </body>

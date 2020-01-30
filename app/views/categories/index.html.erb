@@ -1,3 +1,10 @@
 <% @categories.each do |c| %>
-  <p><%= c.name%></p>
+  <div>
+    <h3><%= c.name%></h3>
+    <ul>
+    <% c.shoes.each do |shoe| %>
+       <li><%= link_to(shoe.brand_and_color, shoe_path(shoe.id))  %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
