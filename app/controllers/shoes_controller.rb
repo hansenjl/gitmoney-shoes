@@ -1,12 +1,12 @@
 class ShoesController < ApplicationController
 
   def index
-    @shoes = Shoe.all
+    @shoes = Shoe.new_shoes.order_by_price
   end
 
   def new
     @shoe = Shoe.new
-    @shoe.build_category
+    @shoe.build_category #belongs_to
   end
 
   def create

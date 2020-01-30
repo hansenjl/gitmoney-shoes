@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    3.times{ @category.shoes.build}
+    @category.shoes.build #has_many
   end
 
   def create
