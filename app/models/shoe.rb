@@ -23,8 +23,18 @@ class Shoe < ActiveRecord::Base
      "#{self.brand} - #{self.color}"
   end
 
+  # Scope
+  scope :new_shoes, -> {where('condition = ?', 'new')}
+  scope :order_by_price, -> {order(:price)}
+  # def self.order_by_price
+  #   order(:price)
+  # end
+
+  # def self.new_shoes
+  #   #where(condition: 'new')
+  # end
   def self.most_expensive
-    self.all.sort_by {|shoe| shoe.price }.last
+    Shoe.where(price: Shoe.maximum('price')).last
   end
 
 

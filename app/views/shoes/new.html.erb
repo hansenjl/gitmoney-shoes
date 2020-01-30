@@ -1,45 +1,22 @@
 <h1>Create a New Shoe here:</h1>
 
-
-<% if @shoe.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@shoe.errors.count, "error") %> prohibited this shoe from being saved:</h2>
-
-    <ul>
-    <% @shoe.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'layouts/errors', {object: @shoe} %>
 
 
-<%= form_with(model: @shoe, class: 'new_shoe') do |f| %>
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
-  <br>
-  <%= f.label :condition %>
-  <%= f.text_field :condition %>
-  <br>
-  <%= f.label :color %>
-  <%= f.text_field :color %>
-  <br>
-   <%= f.label :price %>
-  <%= f.number_field :price, min:0 %>
-  <br>
+<%= form_with(model: @shoe) do |f| %>
+
+  <%= render 'form',  {f: f} %>
+
   <%= f.label :category_id %>
   <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true  %>
   <br>
-
   <h3>Or Create a New Category</h3>
   <%= f.fields_for :category do |cat_field| %>
     <%= cat_field.label :name %>
     <%= cat_field.text_field :name %>
     <br>
   <% end %>
-
   <%= f.submit %>
 <% end %>
-
 
 
