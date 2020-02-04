@@ -1,21 +1,6 @@
-<h1>All the Shoes</h1>
-
-<ul>
-<% @shoes.each do |shoe| %>
-   <li><a href="/shoes/<%= shoe.id %>"><%= shoe.brand_and_color %></a></li>
-<% end %>
-</ul>
-
-<hr>
-
-<ul>
-<% @shoes.each do |shoe| %>
-   <li><a href="<%= shoe_path(shoe.id) %>"><%= shoe.brand_and_color %></a></li>
-<% end %>
-</ul>
+<%= display_nested_header %>
 
 
-<hr>
 
 <ul>
 <% @shoes.each do |shoe| %>

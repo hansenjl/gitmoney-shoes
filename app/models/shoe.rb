@@ -1,5 +1,6 @@
 class Shoe < ActiveRecord::Base
    belongs_to :category  #built in validation for presence
+
    # .category  .category= .build_category
    #  .create_category
 

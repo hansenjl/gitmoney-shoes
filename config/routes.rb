@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories, only: [:index, :new, :create] do
+    resources :shoes, only: [:index, :new, :create]
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/shoes/most_expensive', to: 'shoes#expensive', as: 'expensive'
 
-  resources :shoes, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
+  #unnested shoe routes
+  resources :shoes, only: [:index, :new, :show, :create, :edit, :update, :destroy]
+
+
 
   # get '/shoes', to: 'shoes#index'
   # get '/shoes/new', to: 'shoes#new', as: 'new_shoe'

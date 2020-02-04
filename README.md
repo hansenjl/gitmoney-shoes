@@ -73,3 +73,20 @@ This [guide](https://guides.rubyonrails.org/active_record_validations.html) is a
 - Setting up Associations (models & migrations)
 - Basic Nested Form using [Accepts Nested Attributes](https://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
 - Nested Form using a custom attribute writer
+
+# Thurs Jan 30:
+
+## Refactoring
+
+- Using Partials
+- Partials w/ locals
+- Scope methods
+
+# Tues Feb 4:
+
+## Nested Routes
+
+- Check out this [guide](https://guides.rubyonrails.org/routing.html#nested-resources)
+- When to use Nested Routes
+- Shallow Routing
+- Implementing Nested Routes (index & New)

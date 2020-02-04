@@ -1,12 +1,22 @@
 class ShoesController < ApplicationController
 
   def index
-    @shoes = Shoe.new_shoes.order_by_price
+    #If it is a nested route & that category exists
+    if params[:category_id] && @category = Category.find_by_id(params[:category_id])
+      @shoes = @category.shoes
+       #grab shoes for that category
+    else
+       @shoes = Shoe.all
+    end
   end
 
   def new
-    @shoe = Shoe.new
-    @shoe.build_category #belongs_to
+    if params[:category_id] && @category = Category.find_by_id(params[:category_id])
+      @shoe = @category.shoes.build
+    else #NOT NESTED
+      @shoe = Shoe.new
+      @shoe.build_category #belongs_to
+    end
   end
 
   def create
