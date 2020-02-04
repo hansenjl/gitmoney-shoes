@@ -1,21 +1,32 @@
-<h1>Create a New Shoe here:</h1>
+<h1>Create New <%= display_nested_title %> here:</h1>
 
 <%= render 'layouts/errors', {object: @shoe} %>
 
 
-<%= form_with(model: @shoe) do |f| %>
+<%= form_with(model: [@category, @shoe]) do |f| %>
 
   <%= render 'form',  {f: f} %>
 
+
+ <% if @category.nil? %>
   <%= f.label :category_id %>
   <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true  %>
   <br>
-  <h3>Or Create a New Category</h3>
-  <%= f.fields_for :category do |cat_field| %>
-    <%= cat_field.label :name %>
-    <%= cat_field.text_field :name %>
-    <br>
+
+
+    <h3>Or Create a New Category</h3>
+    <%= f.fields_for :category do |cat_field| %>
+      <%= cat_field.label :name %>
+      <%= cat_field.text_field :name %>
+      <br>
+    <% end %>
+
+
+  <% else %>
+      <%= f.hidden_field :category_id %>
   <% end %>
+
+   <br>
   <%= f.submit %>
 <% end %>
 
