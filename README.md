@@ -90,3 +90,14 @@ This [guide](https://guides.rubyonrails.org/active_record_validations.html) is a
 - When to use Nested Routes
 - Shallow Routing
 - Implementing Nested Routes (index & New)
+
+# Wed Feb 5:
+
+## Authentication
+
+- Setting up the User model
+- Login/Logout
+- Helper Methods
+- Google Ominauth - [blog](https://medium.com/swlh/google-authentication-strategy-for-rails-5-application-cd37947d2b1b)
+- Github Omniauth - [documentation](https://github.com/omniauth/omniauth-github)
+- [Rails Credentials](https://medium.com/cedarcode/rails-5-2-credentials-9b3324851336)
