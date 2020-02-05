@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+  delete '/logout', to: 'sessions#destroy'
+
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+
+  resources :users, only: [:show]
   resources :categories, only: [:index, :new, :create] do
     resources :shoes, only: [:index, :new, :create]
   end
@@ -18,13 +25,5 @@ Rails.application.routes.draw do
   # get '/shoes/:id', to: 'shoes#show', as: 'shoe'
 
 
-
-
 end
 
-
-
-
-# new and create method  (controller)
-# a view with a form
-# routes
