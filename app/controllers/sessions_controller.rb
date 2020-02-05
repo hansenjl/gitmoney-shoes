@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:message] = @user.errors.full_messages
-      redirect_to '/signu'
+      redirect_to '/signup'
     end
   end
 
